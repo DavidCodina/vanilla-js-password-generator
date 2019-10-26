@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;         */
+  font-family: "Open Sans", "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  line-height: 1;
+  color: #333;
+  text-align: left;
+  background-color: #282c34;
+}
+
+main {
+  min-height: 100vh;
+  padding: 0 50px 50px 50px;
+}
+
+.fancy-h1 {
+  margin: 0;
+  padding: 50px 0;
+  color: snow;
+  text-align: center;
+  font-size: 50px;
+  font-family: Montserrat;
+  letter-spacing: 3px;
+  line-height: 1.25;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: violet;
+  text-shadow: -3px 3px 6px rgba(0,0,0,0.15);
+}
+
+.fancy-h1 span {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 20px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #61DAFB;
+}
+
+.fancy-h2 {
+  color: snow;
+  font-size: 40px;
+  font-family: Montserrat;
+  letter-spacing: 1px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: violet;
+  text-shadow: -2px 2px 4px rgba(0,0,0,0.15);
+}
+
+
+.fancy-h3 {
+  margin: 0 auto 25px auto;
+  color: white;
+  font-size: 32px;
+  font-family: Montserrat;
+  text-align: center;
+  letter-spacing: 1px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: violet;
+  text-shadow: -2px 2px 4px rgba(0,0,0,0.15);
+}
+
+.article {
+  width: 100%;
+  margin: 50px auto;
+  padding: 25px;
+  color: #333;
+  background-color: snow;
+  border: 2px solid #61DAFB;
+  border-radius: 1.5rem  !important;
+}
+
+li {
+  margin-bottom: 25px;
+}
+
+.note {
+  width: 90%;
+  margin: 50px auto;
+  padding: 25px 25px 0 25px;
+  background-color: rgb(240,240,240);
+  border: 1px solid #333;
+  border-radius: 5px;
+}
+
+
+/* =============================================================================
+                            .password-generator-container
+============================================================================= */
+
+
+.password-generator-container {
+  margin: 0 auto 100px auto;
+  color: #fff;
+	background-color: #61DAFB;
+	box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.2);
+	padding: 20px;
+	width: 400px;
+	max-width: 100%;
+  border: 1px solid #282c34;
+  border-radius: 15px;
+  box-shadow: -2px 2px 4px rgba(0,0,0,0.15);
+}
+
+.password-generator-container p {
+	margin: 5px 0;
+}
+
+.button-container {
+  display:flex;
+  width: 90%;
+  margin: 25px auto 0 auto;
+  border: 0.5px solid #333;
+  border-radius: 15px;
+  box-shadow: -2px 2px 4px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+.button-container button {
+  display: block;
+  flex: 1;
+  margin: 0;
+  padding: 10px 0px;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: rgb(240,240,240);
+  border: none;
+}
+
+.button-container button:hover {
+  color: white;
+  background-color: violet;
+}
+
+#generate-button {
+ border-right: 0.5px solid #333;
+}
+
+
+/* =============================================================================
+                            .settings-form
+============================================================================= */
+
+
+.form-group {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 0 15px 0;
+}
+
+.settings-form label {
+  color: #282c34;
+}
+
+
+/* ==============================
+    Custom 'Number' Input
+============================== */
+
+
+.number-input-container {
+	display: inline-flex;
+	height: 25px;
+	border: 0.5px solid #333;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.number-input-container input {
+	height: 100%;
+	width: 25px;
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+  color: #333;
+  text-align: center;
+	border: none;
+  border-right: 0.5px solid #333;
+	border-left: 0.5px solid #333;
+}
+
+.number-input-container .decrement,
+.number-input-container .increment {
+  display: block;
+	height: 100%;
+  width: 20px;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+  color: #333;
+  text-align: center;
+	line-height: 1.1;
+	cursor: pointer;
+  background-color: rgb(240,240,240);
+}
+
+.number-input-container .decrement:hover,
+.number-input-container .increment:hover {
+	color: white;
+	background-color: violet;
+}
+
+
+/* ==============================
+    Custom Checkbox
+============================== */
+
+
+input[type='checkbox'] {
+  display:block;
+  position: relative;
+  height: 25px;
+  width: 65px;
+  margin: 0;
+  -webkit-appearance: button; /* ? */
+  cursor: pointer;
+  background-color: rgb(240,240,240);
+  border: 0.5px solid rgba(0,0,0,0.5);
+  border-radius: 5px;
+  box-shadow: inset 0 1px 4px rgba(0,0,0,.2);
+  transition: background-color 0.15s linear;
+}
+
+/* This is the checkbox square/slider. */
+input[type='checkbox']:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 80%;
+  width: 45%;
+  margin: 0 5%;
+  background-color: white;
+  background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(240,240,240,1) 100%);
+  border: 0.5px solid rgba(0,0,0,0.5);
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  transition: all 0.15s linear;
+}
+
+/* This is the the background of the box when checked. */
+input[type='checkbox']:checked{
+  background-color: violet;
+}
+
+input[type='checkbox']:checked:after {
+  left: 45%;
+}
+
+
+/* =============================================================================
+                            .result-container
+============================================================================= */
+
+
+.result-container {
+  display: flex;
+  justify-content: flex-start;
+	align-items: center;
+  position: relative; /* .result-container .btn is position: absolute */
+  height: 50px;
+	width: 100%;
+  margin: 0 0 25px 0;
+  padding: 12px 10px;
+	font-size: 16px;
+  color: #333;
+	letter-spacing: 1px;
+  background-color: white;
+  border: 1px solid #282c34;
+  border-radius: 15px;
+}
+
+.result-container #result {
+  word-wrap: break-word;
+	max-width: calc(100% - 40px);
+}
+
+/* #clipboard */
+.result-container .btn {
+  height: 40px;
+	width: 40px;
+	font-size: 20px;
+  color: #333;
+	position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background-color: rgb(230,230,230);
+  border: 0.5px solid rgba(0,0,0,0.5);
+  border-radius: 40px;
+}
+
+.result-container .btn:hover {
+  color: white;
+  background-color: violet;
+}
+
+
+/* ============================
+         Toast styles
+=========================== */
+
+
+.toastify {
+  min-width: 325px;
+  max-width: 325px;
+  margin-top: 25px;
+  margin-right: 25px !important;
+  padding-right: 30px;
+  color: white;
+  line-height: 1.5;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.toastify.success-toast { color: #333; }
+
+.toastify .toast-close {
+  font-size: 24px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0 !important;
+  line-height: 0.7;
+}
