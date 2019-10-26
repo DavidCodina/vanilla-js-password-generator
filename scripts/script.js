@@ -129,8 +129,10 @@ function generatePassword(lower, upper, number, symbol, characterNumber) {
 
 
 function clearResult(){
-  const result = document.getElementById('result');
+  const result       = document.getElementById('result');
+  const settingsForm = document.getElementsByClassName('settings-form')[0];
   result.textContent = '';
+  settingsForm.reset();
 }
 
 
