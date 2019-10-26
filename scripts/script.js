@@ -9,7 +9,7 @@
 
 
 function getRandomLower() {
-	return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
 
 
@@ -17,8 +17,9 @@ function getRandomLower() {
       getRandomUpper()
 ============================ */
 
+
 function getRandomUpper() {
-	return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
 }
 
 
@@ -27,7 +28,7 @@ function getRandomUpper() {
 ============================ */
 
 function getRandomNumber() {
-	return +String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+  return +String.fromCharCode(Math.floor(Math.random() * 10) + 48);
 }
 
 /* ============================
@@ -36,8 +37,8 @@ function getRandomNumber() {
 
 
 function getRandomSymbol() {
-	const symbols = '!@#$%^&*(){}[]=<>/,.'
-	return symbols[Math.floor(Math.random() * symbols.length)];
+  const symbols = '!@#$%^&*(){}[]=<>/,.'
+  return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
 
@@ -50,15 +51,15 @@ function getRandomSymbol() {
 //They are then accessed if in generatePassword when they filter through
 //to the includedTypes array.
 const randomFunctions = {
-	lower:  getRandomLower,
-	upper:  getRandomUpper,
-	number: getRandomNumber,
-	symbol: getRandomSymbol
+  lower:  getRandomLower,
+  upper:  getRandomUpper,
+  number: getRandomNumber,
+  symbol: getRandomSymbol
 }
 
 
 /* =============================================================================
-                            generatePassword()
+                           generatePassword()
 ============================================================================= */
 
 
@@ -77,36 +78,36 @@ function generatePassword(lower, upper, number, symbol, characterNumber) {
       stopOnFocus: true,
       close: true
     }).showToast();
-    return '';
+   return '';
   }
 
 
-	let generatedPassword = '';
+  let generatedPassword = '';
 
-	//Before filter: [{lower: true|false}, {upper: true|false}, {number: true|false}, {symbol: true|false}]
-	//After filtering, only those elements that have true values will remain.
-	//Because two of the values are true, they pass the test.
-	const includedTypes = [ {lower}, {upper}, {number}, {symbol}]
-	  .filter(item => Object.values(item)[0]);
-	//1-4 types will be included:
-	//includedTypes: [{lower: true}, {upper: true}, {number: true}, {symbol: true}]
+  //Before filter: [{lower: true|false}, {upper: true|false}, {number: true|false}, {symbol: true|false}]
+  //After filtering, only those elements that have true values will remain.
+  //Because two of the values are true, they pass the test.
+  const includedTypes = [ {lower}, {upper}, {number}, {symbol}]
+    .filter(item => Object.values(item)[0]);
+  //1-4 types will be included:
+  //includedTypes: [{lower: true}, {upper: true}, {number: true}, {symbol: true}]
 
-	for (let i = 0; i < characterNumber; i += typesCount) {
-		includedTypes.forEach(
-			(type) => {
-				//The pattern is not entirely random.
-				//It's always lower, upper, number, symbol...
-				//However the functions themselves randomize WHICH character
-				//for each subset will be chosens
-			  const functionName = Object.keys(type)[0];
-				                     //Here is where we are calling the helper functions.
-			  generatedPassword += randomFunctions[functionName]();
-		  }
-		);
-	}
+  for (let i = 0; i < characterNumber; i += typesCount) {
+    includedTypes.forEach(
+      (type) => {
+        //The pattern is not entirely random.
+        //It's always lower, upper, number, symbol...
+        //However the functions themselves randomize WHICH character
+        //for each subset will be chosens
+        const functionName = Object.keys(type)[0];
+                             //Here is where we are calling the helper functions.
+        generatedPassword += randomFunctions[functionName]();
+      }
+    );
+  }
 
-	//generatedPassword may overgenerate numbers, and therefore needs to be truncated.
-	const finalPassword = generatedPassword.slice(0, characterNumber);
+  //generatedPassword may overgenerate numbers, and therefore needs to be truncated.
+  const finalPassword = generatedPassword.slice(0, characterNumber);
 
 
   Toastify({
@@ -118,32 +119,32 @@ function generatePassword(lower, upper, number, symbol, characterNumber) {
     close: true
   }).showToast();
 
-	return finalPassword;
+  return finalPassword;
 }
 
 
 /* =============================================================================
-                            clearResult()
+                                clearResult()
 ============================================================================= */
 
 
 function clearResult(){
-	const result = document.getElementById('result');
-	result.textContent = '';
+  const result = document.getElementById('result');
+  result.textContent = '';
 }
 
 
 /* =============================================================================
-                            copyToClipboard()
+                              copyToClipboard()
 ============================================================================= */
 
 
 function copyToClipboard(){
-	const textarea = document.createElement('textarea');
+  const textarea = document.createElement('textarea');
   const result   = document.getElementById('result');
-	const password = result.innerText;
+  const password = result.innerText;
 
-	if (!password) {
+  if (!password) {
     Toastify({
       text: "First generate a password. <em>Then</em> copy!",
       duration: 3000,
@@ -152,16 +153,17 @@ function copyToClipboard(){
       stopOnFocus: true,
       close: true
     }).showToast();
+
     return;
   }
 
-	textarea.value = password;
-	document.body.appendChild(textarea);
-	textarea.select();
-	document.execCommand('copy');
-	textarea.remove();
+  textarea.value = password;
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  textarea.remove();
 
-	clearResult();
+  clearResult();
 
   Toastify({
     text: "Password copied to clipboard!",
@@ -175,7 +177,7 @@ function copyToClipboard(){
 
 
 /* =============================================================================
-                              Event Listeners
+                             Event Listeners
 ============================================================================= */
 
 
@@ -200,20 +202,20 @@ generateButton.addEventListener('click', (e) => {
   const symbolsCheckbox   = document.getElementById('symbols-checkbox');
 
   //Values
-	const length           = +lengthInput.value;        //Presumably this is a hack to coerce the value.
-	const includeLowercase = lowercaseCheckbox.checked; //true | false  (type boolean)
-	const includeUppercase = uppercaseCheckbox.checked; //true | false
-	const includeNumbers   = numbersCheckbox.checked;   //true | false
-	const includeSymbols   = symbolsCheckbox.checked;   //true | false
+  const length           = +lengthInput.value;        //Presumably this is a hack to coerce the value.
+  const includeLowercase = lowercaseCheckbox.checked; //true | false  (type boolean)
+  const includeUppercase = uppercaseCheckbox.checked; //true | false
+  const includeNumbers   = numbersCheckbox.checked;   //true | false
+  const includeSymbols   = symbolsCheckbox.checked;   //true | false
 
-	result.innerText = generatePassword(includeLowercase, includeUppercase, includeNumbers, includeSymbols, length);
+  result.innerText = generatePassword(includeLowercase, includeUppercase, includeNumbers, includeSymbols, length);
 });
 
 
 minusButton.addEventListener('click', function(){
-	const numberInputContainer = this.closest('.number-input-container');
-	const numberInput          = numberInputContainer.getElementsByTagName('INPUT')[0];
-	let value                  = parseInt(numberInput.value, 10);
+  const numberInputContainer = this.closest('.number-input-container');
+  const numberInput          = numberInputContainer.getElementsByTagName('INPUT')[0];
+  let value                  = parseInt(numberInput.value, 10);
 
   if (value === 5) {
     Toastify({
@@ -224,19 +226,21 @@ minusButton.addEventListener('click', function(){
       stopOnFocus: true,
       close: true
     }).showToast();
+
     return;
   }
-	value -= 1;
-	numberInput.value = value;
+
+  value -= 1;
+  numberInput.value = value;
 });
 
 
 plusButton.addEventListener('click', function(){
-	const numberInputContainer = this.closest('.number-input-container');
-	const numberInput          = numberInputContainer.getElementsByTagName('INPUT')[0];
-	let value                  = parseInt(numberInput.value, 10);
+  const numberInputContainer = this.closest('.number-input-container');
+  const numberInput          = numberInputContainer.getElementsByTagName('INPUT')[0];
+  let value                  = parseInt(numberInput.value, 10);
 
-	if (value === 20) {
+  if (value === 20) {
     Toastify({
       text: "Whoops! No going above 20...",
       duration: 3000,
@@ -245,11 +249,12 @@ plusButton.addEventListener('click', function(){
       stopOnFocus: true,
       close: true
     }).showToast();
+
     return;
   }
 
-	value += 1;
-	numberInput.value = value;
+  value += 1;
+  numberInput.value = value;
 });
 
 

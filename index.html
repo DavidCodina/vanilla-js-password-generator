@@ -1,84 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title> - </title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"/>
+  <title> - </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"/>
   <link rel="stylesheet" href="styles/style.css">
 </head>
 
 
 <body>
-	<!-- =========================================================================
-                                  <header>
-	========================================================================== -->
+  <!-- =========================================================================
+                                <header>
+  ========================================================================== -->
 
 
   <header>
-		<h1 class="fancy-h1">JS Password Generator</h1>
+    <h1 class="fancy-h1">JS Password Generator</h1>
   </header>
 
 
-	<!-- =========================================================================
-                                   <main>
-	========================================================================== -->
+  <!-- =========================================================================
+                                 <main>
+  ========================================================================== -->
 
 
   <main>
-		<div class="password-generator-container">
-			<h3 class="fancy-h3">Password Generator</h3>
+    <div class="password-generator-container">
+      <h3 class="fancy-h3">Password Generator</h3>
 
-			<div class="result-container">
-				<span id="result"></span>
-				<button id="clipboard" class="btn">
-					<i class="far fa-clipboard"></i>
-				</button>
-			</div>
+      <div class="result-container">
+        <span id="result"></span>
+        <button id="clipboard" class="btn"><i class="far fa-clipboard"></i></button>
+      </div>
 
 
-			<form class="settings-form">
-				<div class="form-group">
-					<label>Password Length</label>
-					<div class="number-input-container">
-					  <div id="minus-button" class="decrement">&#45;</div>
-					  <div>
-							<input id="length-input" type="text" value="5"/>
-						</div>
-					  <div id="plus-button" class="increment">&#43;</div>
-					</div>
-				</div>
+      <form class="settings-form">
+        <div class="form-group">
+          <label>Password Length</label>
+          <div class="number-input-container">
+            <div id="minus-button" class="decrement">&#45;</div>
+            <div>
+              <input id="length-input" type="text" value="5"/>
+            </div>
+            <div id="plus-button" class="increment">&#43;</div>
+          </div>
+        </div>
 
-				<div class="form-group">
-					<label>Include Uppercase Letters</label>
-					<input id="uppercase-checkbox" type="checkbox" />
-				</div>
+        <div class="form-group">
+          <label>Include Uppercase Letters</label>
+          <input id="uppercase-checkbox" type="checkbox" />
+        </div>
 
-				<div class="form-group">
-					<label>Include Lowercase Letters</label>
-					<input id="lowercase-checkbox" type="checkbox" />
-				</div>
+        <div class="form-group">
+          <label>Include Lowercase Letters</label>
+          <input id="lowercase-checkbox" type="checkbox" />
+        </div>
 
-				<div class="form-group">
-					<label>Include Numbers</label>
-					<input id="numbers-checkbox" type="checkbox" />
-				</div>
+        <div class="form-group">
+          <label>Include Numbers</label>
+          <input id="numbers-checkbox" type="checkbox" />
+        </div>
 
-				<div class="form-group">
-					<label>Include Symbols</label>
-					<input id="symbols-checkbox" type="checkbox" />
-				</div>
-			</form>
+        <div class="form-group">
+          <label>Include Symbols</label>
+          <input id="symbols-checkbox" type="checkbox" />
+        </div>
 
-			<div class="button-container">
-				<button id="generate-button" class="btn">Generate Password</button>
-				<button id="clear-button"    class="btn">Clear</button>
-			</div>
-		</div>
+        <div class="button-container">
+          <!-- use type="button" to override default of type="submit" -->
+          <button id="generate-button" type="button"class="btn">Generate Password</button>
+          <button id="clear-button"    type="button"class="btn">Clear</button>
+        </div>
+      </form>
+    </div><!-- End of: <div class="password-generator-container"> -->
   </main>
-	<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-	<script src="scripts/script.js"></script>
+
+	
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="scripts/script.js"></script>
 </body>
 </html>
